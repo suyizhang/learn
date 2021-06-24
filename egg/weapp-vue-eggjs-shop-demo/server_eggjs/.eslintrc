@@ -1,0 +1,13 @@
+{
+  "extends": ["eslint-config-egg"],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "array-bracket-spacing": 0
+  }
+}

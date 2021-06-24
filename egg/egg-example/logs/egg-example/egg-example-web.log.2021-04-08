@@ -1,0 +1,96 @@
+2021-04-08 09:31:40,364 ERROR 4180 [-/127.0.0.1/-/5030ms GET /news] nodejs.ConnectionTimeoutError: Connect timeout for 5000ms, GET https://hacker-news.firebaseio.com/v0/topstories.json -2 (connected: false, keepalive socket: false, agent status: {"createSocketCount":1,"createSocketErrorCount":0,"closeSocketCount":1,"errorSocketCount":0,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{},"requests":{}}, socketHandledRequests: 1, socketHandledResponses: 0)
+headers: {}
+headers: {}
+    at Timeout._onTimeout (D:\learn\egg\egg-example\node_modules\urllib\lib\urllib.js:950:15)
+    at listOnTimeout (internal/timers.js:531:17)
+    at processTimers (internal/timers.js:475:7)
+name: "ConnectionTimeoutError"
+requestId: 1
+data: undefined
+path: "/v0/topstories.json?orderBy=%22%24key%22&startAt=%220%22&endAt=%224%22"
+status: -2
+headers: {}
+res: {"status":-2,"statusCode":-2,"statusMessage":null,"headers":{},"size":0,"aborted":false,"rt":5024,"keepAliveSocket":false,"requestUrls":["https://hacker-news.firebaseio.com/v0/topstories.json"],"timing":null,"remoteAddress":"35.201.97.85","remotePort":"","socketHandledRequests":1,"socketHandledResponses":0}
+pid: 4180
+hostname: DESKTOP-J04S3HF
+
+2021-04-08 10:02:09,721 ERROR 17988 [-/127.0.0.1/-/2299ms GET /news] nodejs.RequestError: getaddrinfo ENOTFOUND undefined, GET http://undefined/topstories.json -1 (connected: false, keepalive socket: false, agent status: {"createSocketCount":1,"createSocketErrorCount":0,"closeSocketCount":0,"errorSocketCount":1,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{"undefined:80:":1},"requests":{}}, socketHandledRequests: 1, socketHandledResponses: 0)
+headers: {}
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:60:26)
+errno: "ENOTFOUND"
+code: "ENOTFOUND"
+syscall: "getaddrinfo"
+hostname: "undefined"
+name: "RequestError"
+data: undefined
+path: "/topstories.json?orderBy=%22%24key%22&startAt=%220%22&endAt=%224%22"
+status: -1
+headers: {}
+res: {"status":-1,"statusCode":-1,"statusMessage":null,"headers":{},"size":0,"aborted":false,"rt":2288,"keepAliveSocket":false,"requestUrls":["http://undefined/topstories.json"],"timing":null,"remoteAddress":"","remotePort":"","socketHandledRequests":1,"socketHandledResponses":0}
+pid: 17988
+hostname: DESKTOP-J04S3HF
+
+2021-04-08 10:02:48,190 ERROR 15592 [-/127.0.0.1/-/2289ms GET /news] nodejs.RequestError: getaddrinfo ENOTFOUND undefined, GET http://undefined/topstories.json -1 (connected: false, keepalive socket: false, agent status: {"createSocketCount":1,"createSocketErrorCount":0,"closeSocketCount":0,"errorSocketCount":1,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{"undefined:80:":1},"requests":{}}, socketHandledRequests: 1, socketHandledResponses: 0)
+headers: {}
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:60:26)
+errno: "ENOTFOUND"
+code: "ENOTFOUND"
+syscall: "getaddrinfo"
+hostname: "undefined"
+name: "RequestError"
+data: undefined
+path: "/topstories.json?orderBy=%22%24key%22&startAt=%220%22&endAt=%224%22"
+status: -1
+headers: {}
+res: {"status":-1,"statusCode":-1,"statusMessage":null,"headers":{},"size":0,"aborted":false,"rt":2275,"keepAliveSocket":false,"requestUrls":["http://undefined/topstories.json"],"timing":null,"remoteAddress":"","remotePort":"","socketHandledRequests":1,"socketHandledResponses":0}
+pid: 15592
+hostname: DESKTOP-J04S3HF
+
+2021-04-08 10:02:53,007 ERROR 15592 [-/127.0.0.1/-/2279ms GET /news] nodejs.RequestError: getaddrinfo ENOTFOUND undefined, GET http://undefined/topstories.json -1 (connected: false, keepalive socket: false, agent status: {"createSocketCount":2,"createSocketErrorCount":0,"closeSocketCount":1,"errorSocketCount":2,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{"undefined:80:":1},"requests":{}}, socketHandledRequests: 1, socketHandledResponses: 0)
+headers: {}
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:60:26)
+errno: "ENOTFOUND"
+code: "ENOTFOUND"
+syscall: "getaddrinfo"
+hostname: "undefined"
+name: "RequestError"
+data: undefined
+path: "/topstories.json?orderBy=%22%24key%22&startAt=%220%22&endAt=%224%22"
+status: -1
+headers: {}
+res: {"status":-1,"statusCode":-1,"statusMessage":null,"headers":{},"size":0,"aborted":false,"rt":2278,"keepAliveSocket":false,"requestUrls":["http://undefined/topstories.json"],"timing":null,"remoteAddress":"","remotePort":"","socketHandledRequests":1,"socketHandledResponses":0}
+pid: 15592
+hostname: DESKTOP-J04S3HF
+
+2021-04-08 11:05:09,992 ERROR 15592 [-/127.0.0.1/-/2295ms GET /news] nodejs.RequestError: getaddrinfo ENOTFOUND undefined, GET http://undefined/topstories.json -1 (connected: false, keepalive socket: false, agent status: {"createSocketCount":3,"createSocketErrorCount":0,"closeSocketCount":2,"errorSocketCount":3,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{"undefined:80:":1},"requests":{}}, socketHandledRequests: 1, socketHandledResponses: 0)
+headers: {}
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:60:26)
+errno: "ENOTFOUND"
+code: "ENOTFOUND"
+syscall: "getaddrinfo"
+hostname: "undefined"
+name: "RequestError"
+data: undefined
+path: "/topstories.json?orderBy=%22%24key%22&startAt=%220%22&endAt=%224%22"
+status: -1
+headers: {}
+res: {"status":-1,"statusCode":-1,"statusMessage":null,"headers":{},"size":0,"aborted":false,"rt":2287,"keepAliveSocket":false,"requestUrls":["http://undefined/topstories.json"],"timing":null,"remoteAddress":"","remotePort":"","socketHandledRequests":1,"socketHandledResponses":0}
+pid: 15592
+hostname: DESKTOP-J04S3HF
+
+2021-04-08 12:42:06,022 ERROR 15592 [-/127.0.0.1/-/2276ms GET /news] nodejs.RequestError: getaddrinfo ENOTFOUND undefined, GET http://undefined/topstories.json -1 (connected: false, keepalive socket: false, agent status: {"createSocketCount":4,"createSocketErrorCount":0,"closeSocketCount":3,"errorSocketCount":4,"timeoutSocketCount":0,"requestCount":0,"freeSockets":{},"sockets":{"undefined:80:":1},"requests":{}}, socketHandledRequests: 1, socketHandledResponses: 0)
+headers: {}
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:60:26)
+errno: "ENOTFOUND"
+code: "ENOTFOUND"
+syscall: "getaddrinfo"
+hostname: "undefined"
+name: "RequestError"
+data: undefined
+path: "/topstories.json?orderBy=%22%24key%22&startAt=%220%22&endAt=%224%22"
+status: -1
+headers: {}
+res: {"status":-1,"statusCode":-1,"statusMessage":null,"headers":{},"size":0,"aborted":false,"rt":2268,"keepAliveSocket":false,"requestUrls":["http://undefined/topstories.json"],"timing":null,"remoteAddress":"","remotePort":"","socketHandledRequests":1,"socketHandledResponses":0}
+pid: 15592
+hostname: DESKTOP-J04S3HF
+

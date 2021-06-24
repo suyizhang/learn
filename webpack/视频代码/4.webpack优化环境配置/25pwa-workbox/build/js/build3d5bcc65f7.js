@@ -1,0 +1,2 @@
+!function(){"use strict";console.log(7),"serviceWorker"in navigator&&window.addEventListener("load",(()=>{navigator.serviceWorker.register("/service-worker.js").then((()=>{console.log("注册成功")})).catch((()=>{console.log("注册失败")}))}))}();
+//# sourceMappingURL=build3d5bcc65f7.js.map

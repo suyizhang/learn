@@ -1,0 +1,9 @@
+2021-04-09 00:00:01,053 INFO 15416 [egg-logrotator] agent logger reload: got log-reload message
+2021-04-09 09:00:48,533 ERROR 15416 nodejs.ClusterClientNoResponseError: client no response in 15429002ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (D:\learn\egg\egg-example\node_modules\cluster-client\lib\leader.js:77:23)
+    at listOnTimeout (internal/timers.js:531:17)
+    at processTimers (internal/timers.js:475:7)
+name: "ClusterClientNoResponseError"
+pid: 15416
+hostname: DESKTOP-J04S3HF
+

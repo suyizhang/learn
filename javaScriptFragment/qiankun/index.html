@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 互不影响 创造一个干净的环境
+    // 快照沙箱
+    class SnapshotSandbox {
+      constructor() {
+        this.proxy = window; // 
+        this.modifyPropsMap = {}; // 记录修改
+        this.active();
+      }
+
+      active() {
+        this.windowSnapshot = {};
+        for (const prop in window) {
+          if (window.hasOwnProperty(prop)) {
+            this.windowSnapshot[prop] = window[prop];
+          }
+        }
+
+        Object.keys(this.modifyPropsMap).forEach(v => {
+          window[v] = this.modifyPropsMap[v];
+        })
+      }
+
+      inactive() {
+        for (const prop in window) {
+          if (window.hasOwnProperty(prop)) {
+            if (window[prop] !== this.windowSnapshot[prop]) {
+              this.modifyPropsMap[prop] = window[prop];
+              window[prop] = this.windowSnapshot[prop];
+            }
+          }
+        }
+      }
+    }
+
+    const sandbox = new SnapshotSandbox();
+
+    ((window) => {
+      window.a = 1;
+      window.b = 1;
+      sandbox.inactive();
+      console.log(window.b);
+      sandbox.active();
+      window.c = 12;
+      console.log(window.b);
+      console.log(window.c);
+      sandbox.inactive();
+      console.log(window.b);
+      sandbox.active();
+      console.log(window.c);
+    })(sandbox.proxy)
+  </script>
+</body>
+</html>

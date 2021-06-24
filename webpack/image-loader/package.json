@@ -1,0 +1,47 @@
+{
+  "name": "image-loader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --mode development --config ./dev-server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.14.1",
+    "@babel/preset-react": "^7.13.13",
+    "autoprefixer": "^10.2.5",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.4",
+    "file-loader": "^6.2.0",
+    "get-pixels": "^3.3.2",
+    "html-webpack-plugin": "^5.3.1",
+    "imagemin": "^8.0.0",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-svgo": "^9.0.0",
+    "is-jpg": "^2.0.0",
+    "less": "^4.1.1",
+    "less-loader": "^8.1.1",
+    "memory-fs": "^0.5.0",
+    "mocha": "^8.4.0",
+    "png.js": "^0.2.1",
+    "postcss-loader": "^5.2.0",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.37.0",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "@syfwl/png.js": "^1.0.0",
+    "img-loader": "^4.0.0",
+    "jpeg-js": "^0.4.3",
+    "ndarray": "^1.0.19",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}

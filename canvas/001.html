@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        window.onload = function () {
+            const canvas = document.querySelector("#canvas");
+            const clientWidth = document.body.clientWidth;
+            const clientHeight = document.body.clientHeight;
+            console.log(canvas);
+            canvas.width = clientWidth;
+            canvas.height = clientHeight;
+
+            let line = new Draw(canvas, clientWidth, clientHeight);
+            line.reset();
+            draw();
+            window.requestAnimationFrame(draw);
+
+            function draw() {
+                line.reset();
+                line.draw();
+                window.requestAnimationFrame(draw);
+            }
+        };
+
+        function randNum(a,b){
+            return Math.floor(Math.random()*(b-a)+a);
+        }
+
+        class Draw {
+            constructor(canvas, width, height) {
+                this.number = 10;
+                this.w = width;
+                this.h = height;
+                this.lineList = [];
+                this.context = canvas.getContext("2d");
+                this.context.translate(this.w / 2, this.h / 2);
+            }
+
+            reset = () => {
+                this.context.clearRect(-this.w / 2, -this.h / 2, this.w, this.h);
+            };
+
+            getBase = () => {
+                for (let i = 0; i < this.number; i++) { }
+            };
+
+            draw = () => {
+                console.log(1);
+                  this.context.save();
+                // this.context.rotate(i * 2 * Math.PI/this.number);
+                // const random = Math.random();
+                const index = Math.random() > .5 ? 1 : -1;
+                const random = index * randNum(0, 5);
+                this.context.beginPath();
+                this.context.moveTo(30, random * 30);
+                this.context.lineTo(-30, -random * 30);
+                this.context.stroke();
+                //   this.context.restore();
+                // for(let i = 0; i < this.number; i++) {
+                //     this.context.save();
+                //     this.context.rotate(i * 2 * Math.PI/this.number);
+                //     this.context.beginPath();
+                //     this.context.moveTo(0,0);
+                //     this.context.lineTo(0,100);
+                //     this.context.stroke();
+                    this.context.restore();
+                // }
+            };
+        }
+    </script>
+</body>
+
+</html>

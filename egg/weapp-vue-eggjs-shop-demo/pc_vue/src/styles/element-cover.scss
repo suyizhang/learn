@@ -1,0 +1,17 @@
+// el-input-number组件按钮在右边时设置输入框的文字水平左边对齐
+.el-input-number {
+  &.is-controls-right {
+    .el-input__inner {
+      text-align: left;
+    }
+  }
+}
+
+.el-badge__content {
+  box-sizing: content-box;
+}
+
+// vuescroll 内容自适应
+.__vuescroll .__view {
+  max-width: 100%;
+}

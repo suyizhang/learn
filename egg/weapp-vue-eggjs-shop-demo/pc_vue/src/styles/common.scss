@@ -1,0 +1,278 @@
+// 按钮
+.success-text-btn {
+  color: #67C23A;
+
+  &:focus {
+    color: #67C23A;
+  }
+
+  &:hover {
+    color: #5daf34;
+  }
+}
+
+.danger-text-btn {
+  color: $--color-red;
+
+  &:focus {
+    color: $--color-red;
+  }
+
+  &:hover {
+    color: #ff8b87;
+  }
+}
+
+// badge
+.badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 8px;
+  font-size: 12px;
+  color: $--color-white;
+  line-height: 1;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: center;
+  background-color: $--color-gray;
+  border-radius: 10px;
+}
+
+// dispaly
+.flex-y-center {
+  display: flex;
+  align-items: center;
+}
+
+// 外边距
+.mt-0 {
+  margin-top: 0 !important;
+}
+
+.mt-10 {
+  margin-top: 10px !important;
+}
+
+.mt-15 {
+  margin-top: 15px !important;
+}
+
+.mt-20 {
+  margin-top: 20px !important;
+}
+
+.mb-15 {
+  margin-bottom: 15px;
+}
+
+.ml-15 {
+  margin-left: 15px !important;
+}
+
+.ml-20 {
+  margin-left: 20px !important;
+}
+
+.ml-30 {
+  margin-left: 30px !important;
+}
+
+.mr-15 {
+  margin-right: 15px !important;
+}
+
+.mr-20 {
+  margin-right: 20px !important;
+}
+
+// 内边距
+.p-0 {
+  padding: 0;
+}
+
+.p-20 {
+  padding: 20px !important;
+}
+
+.p-70 {
+  padding: 70px !important;
+}
+
+.pt-0 {
+  padding-top: 0 !important;
+}
+
+.pb-50 {
+  padding-bottom: 50px !important;
+}
+
+.ptb-10 {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.plr-20 {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+// 宽高
+.wp-100 {
+  width: 100%;
+}
+
+.max-w-480 {
+  max-width: 480px;
+}
+
+.hp-100 {
+  height: 100%;
+}
+
+//.h-39 {
+//  height: 39px !important;
+//}
+
+// 字体
+.fs-20 {
+  font-size: 20px;
+}
+
+.fs-28 {
+  font-size: 28px;
+}
+
+.fs-30 {
+  font-size: 30px;
+}
+
+.fs-42 {
+  font-size: 42px;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-dark-gray {
+  color: $--color-dark-gray;
+}
+
+.text-gray {
+  color: $--color-gray;
+}
+
+.text-red {
+  color: $--color-red;
+}
+
+.text-green {
+  color: $--color-green;
+}
+
+.text-primary {
+  color: $--color-primary;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-middle {
+  vertical-align: middle;
+}
+
+.lh-1 {
+  line-height: 1;
+}
+
+// 文本超过长度显示...
+.ellipsis {
+  list-style: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis
+}
+
+.ellipsis-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+// 背景
+.bg-white {
+  background-color: $--color-white;
+}
+
+.bg-dark-gray {
+  background-color: $--color-dark-gray;
+}
+
+.bg-gray {
+  background-color: $--color-gray;
+}
+
+.bg-red {
+  background-color: $--color-red;
+}
+
+.bg-green {
+  background-color: $--color-green;
+}
+
+.bg-primary {
+  background-color: $--color-primary;
+}
+
+// 鼠标
+.cursor-pointer {
+  cursor: pointer;
+}
+
+// border
+.border-top-1 {
+  border-top: 1px solid #e9ecf3;
+}
+
+.border-right-1 {
+  border-right: 1px solid #e9ecf3;
+}
+
+.border-bottom-1 {
+  border-bottom: 1px solid #e9ecf3;
+}
+
+.border-left-1 {
+  border-left: 1px solid #e9ecf3;
+}
+
+// 清除浮动
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both
+}
+
+// table
+.table-header-cell-gray {
+  color: #666 !important;
+  background-color: #f4f4f4 !important;
+}
+
+// 搜索表单
+.filter-form {
+  .el-form-item {
+    margin-bottom: 10px;
+  }
+}

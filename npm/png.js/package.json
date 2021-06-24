@@ -1,0 +1,23 @@
+{
+  "name": "@syfwl/png.js",
+  "version": "1.0.1",
+  "description": "fork arian pngjs",
+  "main": "PNGReader.js",
+  "repository": {
+    "url": "git://github.com/suyizZZ/png.js"
+  },
+  "scripts": {
+    "build": "browserify ./PNGReader.js -s PNGReader -o html/png.js"
+  },
+  "license": "MIT",
+  "files": [
+    "PNG.js",
+    "PNGReader.js"
+  ],
+  "author": "suyi",
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "^12.0.1",
+    "canvas": "^1.3.5"
+  }
+}

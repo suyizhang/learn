@@ -1,0 +1,4 @@
+2021-04-09 00:00:01,034 INFO 15592 [egg-logrotator] app logger reload: got log-reload message
+2021-04-09 04:29:59,995 INFO 15592 [-/127.0.0.1/-/7ms SCHEDULE /__schedule?path=D:\learn\egg\egg-example\node_modules\egg-multipart\app\schedule\clean_tmpdir.js&type=worker&cron=0%2030%204%20*%20*%20*&immediate=false] [egg-multipart:CleanTmpdir] start clean tmpdir: "C:\\Users\\sy\\AppData\\Local\\Temp\\egg-multipart-tmp\\egg-example"
+2021-04-09 04:30:00,019 INFO 15592 [-/127.0.0.1/-/31ms SCHEDULE /__schedule?path=D:\learn\egg\egg-example\node_modules\egg-multipart\app\schedule\clean_tmpdir.js&type=worker&cron=0%2030%204%20*%20*%20*&immediate=false] [egg-multipart:CleanTmpdir] end
+2021-04-09 09:00:48,116 WARN 15592 [ClusterClient:Watcher] follower closed, and try to init it again

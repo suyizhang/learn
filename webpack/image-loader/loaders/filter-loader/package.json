@@ -1,0 +1,38 @@
+{
+  "name": "img-loader",
+  "version": "4.0.0",
+  "description": "webpack loader for image filter",
+  "keywords": [
+    "image",
+    "filter",
+    "filter-loader",
+    "webpack",
+    "webpack-loader"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/vanwagonet/img-loader.git"
+  },
+  "author": {
+    "name": "suyizZZ",
+    "email": "suyi.xc@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/suyizZZ/filter-loade/issues"
+  },
+  "homepage": "https://github.com/suyizZZ/filter-loader",
+  "dependencies": {
+    "loader-utils": "^1.1.0"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "devDependencies": {
+    "@syfwl/png.js": "^1.0.0",
+    "jpeg-js": "^0.4.3"
+  },
+  "scripts": {
+    "test": "mocha __tests__/*.spec.js"
+  }
+}

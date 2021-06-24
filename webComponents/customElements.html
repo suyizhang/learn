@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    class WordCount extends HTMLElement {
+      constructor() {
+        super();
+        const shadow = this.attachShadow({ mode: 'open' });
+
+        const wrapper = document.createElement('span');
+        wrapper.setAttribute('class', 'wrapper');
+
+        const icon = document.createElement('span');
+        icon.setAttribute('class', 'icon');
+        icon.setAttribute('tabIndex', 0);
+        
+        const info = document.createElement('span');
+        info.setAttribute('class', 'info');
+
+        const text = this.getAttribute('data-text');
+        info.textContent = text;
+
+        shadow.appendChild(wrapper);
+        wrapper.appendChild(icon);
+        wrapper.appendChild(info);
+      }
+
+    }
+
+  customElements.define('popup-info', WordCount);
+  </script>
+</head>
+<body>
+  <popup-info></popup-info>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id='canvas'></canvas>
+    <script>
+        window.onload = function () {
+            const canvas = document.querySelector('#canvas');
+            const ctx = canvas.getContext('2d');
+            const h = document.body.offsetHeight;
+            const w = document.body.offsetWidth;
+            canvas.width = w;
+            canvas.height = h;
+            draw(ctx, w, h);
+
+            function start() {
+                // let e = draw(ctx, w, h);
+                draw(ctx, w, h);
+                // if (e[0] < -w) {
+                //     return;
+                // }
+                window.requestAnimationFrame(start)
+            }
+            window.requestAnimationFrame(start);
+        }
+        let i = 1,
+            s = [0, 0],
+            e = [10, 0],
+            r = 0;
+        function draw(c, w, h) {
+            const x = w / 2 + 1000 * Math.sin(r);
+            const y = h / 2 + 1000 * Math.cos(r);
+            c.beginPath();
+            c.moveTo(w/2, h/2);
+            c.lineTo(x, y);
+            c.stroke();
+            r+= 0.1;
+            // c.rotate(i * Math.PI / 180);
+
+            // if (!(r % 360)) {
+            //     i = -i
+            //     let t = [...s];
+            //     s = [...e];
+            //     e = [...t];
+            // }
+            // return e;
+        }
+    </script>
+</body>
+
+</html>
