@@ -47,7 +47,7 @@ def Find(url):
     return s
 
 
-def dowmloadPictureList(keyword):
+def downloadPictureList(keyword):
     global num
     global List
 
@@ -72,7 +72,7 @@ def dowmloadPictureList(keyword):
             return
 
 
-def dowmloadPicture(html, keyword):
+def downloadPicture(html, keyword):
     global num
     # t =0
     pic_url = re.findall('"objURL":"(.*?)",', html, re.S)  # 先利用正则表达式找到图片url
@@ -98,7 +98,7 @@ def dowmloadPicture(html, keyword):
 
 
 if __name__ == '__main__':  # 主函数入口
-    # word = input("请输入搜索关键词(可以是人名，地名等): ")
+    word = input("请输入搜索关键词(可以是人名，地名等): ")
     url = 'http://pic.netbian.com/e/search/result/index.php?searchid=692&page='  # 高清短发
     tot = Find(url)
     print('经过检测图片共有%d张' % (tot))
@@ -113,7 +113,7 @@ if __name__ == '__main__':  # 主函数入口
         os.mkdir(file)
     t = 0
     tmp = url
-
-    dowmloadPictureList('美女')
+    downloadPictureList(word)
+    # downloadPictureList('美女')
 
     print('当前搜索结束，感谢使用')
