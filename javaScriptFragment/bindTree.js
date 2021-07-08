@@ -21,6 +21,56 @@ class BinarySearchTree {
     }
   };
 
+  insertWhile = (key) => {
+    let node = new this.Node(key);
+    if (this.root === null) {
+      this.root = node;
+    } else {
+      let buffer = this.root;
+
+      while (true) {
+        if (node.value < buffer.value) {
+          if (buffer.left === null) {
+            buffer.left = node;
+            break;
+          } else {
+            buffer = buffer.left;
+          }
+        } else {
+          if (buffer.right === null) {
+            buffer.right = node;
+            break;
+          } else {
+            buffer = buffer.right;
+          }
+        }
+      }
+    }
+  };
+
+  buildTree = (list) => {
+    const nodeList = [];
+    const len = list.length;
+    for (let i = 0; i < len; i++) {
+      if (list[i] !== null) {
+        nodeList[i] = new this.Node(list[i]);
+      } else {
+        nodeList[i] = undefined;
+      }
+    }
+    this.root = nodeList[0];
+    for (let i = 0; i < len / 2; i++) {
+      if (nodeList[i]) {
+        if (2 * i + 1 < len && nodeList[2 * i + 1]) {
+          nodeList[i].left = nodeList[2 * i + 1];
+        }
+        if (2 * i + 2 < len && nodeList[2 * i + 2] ) {
+          nodeList[i].right = nodeList[2 * i + 2];
+        }
+      }
+    }
+  };
+
   // 中序
   inOrderTraverse = (cb) => {
     this.inOrderTraverseNode(this.root, cb);
