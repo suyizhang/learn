@@ -104,6 +104,21 @@ const list = [
   { key: 'node23', parent: null },
 ];
 
+function transformsFlag (list) {
+  const result = [];
+  list.forEach(v => {
+    if (!v.children) {
+      v.children = [];
+    }
+    if (!v.parent) {
+      result.push(v);
+    }
+    const target = list.filter(i => i.parent === v.key);
+    v.children.push(...target);
+  });
+  return result;
+}
+
 function transformsTreeAgain(list) {
   const baseList = [],
     childList = [];
