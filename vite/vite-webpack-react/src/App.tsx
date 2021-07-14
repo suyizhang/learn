@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import logo from './logo.svg'
+import Home from '@/page/home/home';
 import './App.less'
 
 function App() {
@@ -8,10 +8,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React! false</p>
+        <Home />
+        <p>Hello Vite + React!</p>
         <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
+          <button type="button" onClick={() => setCount((count: number) => count + 1)}>
             count is: {count}
           </button>
         </p>
@@ -34,7 +34,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Vite Docs
+            Vite Docs suyi
           </a>
         </p>
       </header>
