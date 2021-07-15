@@ -1,17 +1,24 @@
-import React, { useState } from 'react'
-import Home from '@/page/home/home';
+import React from 'react'
+import Home from '@/page/home/home'
 import './App.less'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = React.useState<number>(0)
+
+  const addCount = (param: number) => {
+    setCount(param + count);
+  }
+  const click = () => {
+    addCount(1);
+  };
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header" onClick={click}>
         <Home />
         <p>Hello Vite + React!</p>
         <p>
-          <button type="button" onClick={() => setCount((count: number) => count + 1)}>
+          <button type="button" onClick={() => setCount((count) => count + 1)}>
             count is: {count}
           </button>
         </p>
@@ -39,7 +46,7 @@ function App() {
         </p>
       </header>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

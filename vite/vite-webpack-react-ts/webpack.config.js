@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -17,8 +16,8 @@ module.exports = {
 
   output: {
     path: resolve('dist'),
-    chunkFilename: `scripts/[name].[contenthash:8].min.js`,
-    publicPath: '/',
+    chunkFilename: 'scripts/[name].[contenthash:8].min.js',
+    publicPath: '/static',
     filename: 'scripts/[name].[contenthash:8].js',
   },
 
@@ -36,23 +35,21 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        enforce: 'pre',
+        exclude: /node_modules/,
         use: [
           {
-            loader: 'eslint-loader',
+            loader: 'babel-loader',
             options: {
-              emitWarning: true,
+              cacheDirectory: true,
+              presets: [
+                '@babel/preset-env',
+                '@babel/preset-react',
+                '@babel/preset-typescript',
+              ],
+              // plugins: [
+              //   ['import', { libraryName: 'antd', style: 'css' }], // `style: true` 会加载 less 文件
+              // ],
             },
-          },
-        ],
-        exclude: /node_modules/,
-      },
-      {
-        test: /\.tsx?$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'awesome-typescript-loader',
           },
         ],
       },
