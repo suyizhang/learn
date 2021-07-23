@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #canvas {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+  <script>
+    const canvas = document.querySelector('#canvas');
+    const ctx = canvas.getContext('2d');
+
+    window.onload = function () {
+      canvas.width = 500;
+      canvas.height = 500;
+      const path1 = [{ x: 50, y: 50 }, { x: 100, y: 50 }, { x: 100, y: 100 }, { x: 50, y: 100 }, ];
+      ctx.moveTo(50, 50);
+      ctx.lineTo(100, 50);
+      ctx.lineTo(100, 100);
+      ctx.lineTo(50, 100);
+      ctx.fill();
+      const path2 = [{ x: 150, y: 150 }, { x: 200, y: 150 }, { x: 200, y: 200 }, { x: 150, y: 200 }, ];
+      ctx.moveTo(150, 150);
+      ctx.lineTo(200, 150);
+      ctx.lineTo(200, 200);
+      ctx.lineTo(150, 200);
+      ctx.fill();
+      canvas.addEventListener('click', function (event) {
+        console.log(event);
+        var x = event.offsetX;
+        var y = event.offsetY;
+        console.log(x, y);
+        console.log(judge({x, y}, path1))
+      });
+    }
+    /**
+     * @param  dot {{x,y}} 需要判断的点
+     * @param  coordinates {{x,y}[]} 多边形点坐标的数组，为保证图形能够闭合，起点和终点必须相等。
+     *        比如三角形需要四个点表示，第一个点和最后一个点必须相同。 
+     * @param  
+     */
+    function judge(dot, coordinates, noneZeroMode = 1) {
+      const { x, y } = dot; // 目标点位
+      let crossNum = 0;
+      let leftCount = 0;
+      let rightCount = 0;
+
+      for (let i = 0; i < coordinates.length - 1; i++) {
+        const start = coordinates[i];
+        const end = coordinates[i + 1];
+
+        // 斜率不存在的情况 水平线
+        if (start.x === end.x) {
+          // 因为射线向右水平，此处说明不相交
+          if (x > start.x) continue;
+
+          // 从左侧贯穿
+          if (end.y > start.y && y >= start.y && y <= end.y) {
+            leftCount++;
+            crossNum++;
+          }
+
+          // 从右侧贯穿
+          if (end.y < start.y && y >= end.y && y <= start.y) {
+            rightCount++;
+            crossNum++;
+          }
+
+          continue;
+        }
+        // 斜率存在的情况，计算斜率
+        const k = (end.y - start.y) / (end.x - start.x);
+        // 交点的x坐标
+        const x0 = (y - start.y) / k + start.x;
+
+        // 因为射线向右水平，此处说明不相交
+        if (x > x0) continue;
+
+        if (end.x > start.x && x0 >= start.x && x0 <= end.x) {
+          crossNum++;
+          if (k >= 0) leftCount++;
+          else rightCount++;
+        }
+        if (end.x < start.x && x0 >= end.x && x0 <= start.x) {
+          crossNum++;
+          if (k >= 0) rightCount++;
+          else leftCount++;
+        }
+      }
+
+      return noneZeroMode === 1 ? leftCount - rightCount !== 0 : crossNum % 2 === 1;
+    }
+    // window.onload = function() {
+    //   canvas.width = 500;
+    //   canvas.height = 500;
+    //   var path1 = new Path2D();
+    //   path1.moveTo(50,50);
+    //   path1.lineTo(100,50);
+    //   path1.lineTo(100,100);
+    //   path1.lineTo(50,100);
+    //   ctx.stroke(path1);
+    //   var path2 = new Path2D();
+    //   path2.moveTo(150,150);
+    //   path2.lineTo(200,150);
+    //   path2.lineTo(200,200);
+    //   path2.lineTo(150,200);
+    //   ctx.fill(path2);
+    //   canvas.addEventListener('click',function (event) {
+    //     console.log(event);
+    //     var x = event.offsetX;
+    //         var y = event.offsetY;
+    //         console.log(x, y);
+    //         console.log( ctx.isPointInPath( path1, x, y ) );
+    //   });
+    // }
+  </script>
+</body>
+
+</html>
